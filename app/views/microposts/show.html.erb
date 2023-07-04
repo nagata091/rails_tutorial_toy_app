@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>投稿をみる</h1>
+
+<%= render @micropost %>
+
+<div>
+  <%= link_to "投稿を編集する", edit_micropost_path(@micropost) %> |
+  <%= link_to "投稿一覧にもどる", microposts_path %>
+
+  <%= button_to "投稿を削除する", @micropost, method: :delete %>
+</div>

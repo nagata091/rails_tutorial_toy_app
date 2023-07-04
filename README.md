@@ -57,7 +57,7 @@
 
 　$ source <(curl -sL https://cdn.learnenough.com/upgrade_git)
 
-・githubにリポジトリhello_app-secondを作成してプッシュ
+### ・githubにリポジトリhello_app-secondを作成してプッシュ
 
 　↓個人アクセストークン
 
@@ -74,6 +74,34 @@
 
 ・railsサーバーを起動し、無事起動することを確認
 
-・gtihubのリポジトリtoy_ app_secondにpush
+### ・gtihubのリポジトリtoy_ app_secondを作成してpush
 
-・
+・scaffoldコマンドでUsersモデルを作成　カラムはname:stringとemail:string
+
+・作ったデータベースをマイグレート
+
+・scaffoldで作成したので、URLが~/usersに新しくページが自動で作成されていることを確認
+
+・rootページをusers/indexに変更
+
+・scaffoldはいろんなページを一気に作成してくれるので便利だが、データの検証やテストが行われていないなどの問題点が多々ある。
+
+・Micropostモデルを作成　カラムはcontent:textとuser_id:integer
+
+・models/micropost.rb に投稿のバリデーションを作成　投稿を140字に制限
+
+・models/user.rb にuser一人に複数のmicropostが紐づくように設定　has_many :microposts
+
+・models/micropost.rb にmicropost一つにuser一人が紐づくように設定　belongs_to :user
+
+・railsコンドールで紐づけがちゃんとできているか確認
+
+・演習：ユーザーのshowページに、ユーザーの最初の投稿を表示させる
+
+・演習：投稿のバリデーションを追加　空白だとエラーを返すように
+
+・演習：Userモデルにバリデーションを追加　nameとemailが空白のときにエラーを返す
+
+・ユーザーと投稿のページの行ったり来たりが面倒だったのでヘッダーに各一覧へのリンクを設置
+
+### ・toy_appの作成終了　push
